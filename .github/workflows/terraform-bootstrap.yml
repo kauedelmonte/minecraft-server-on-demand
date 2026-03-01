@@ -22,6 +22,7 @@ env:
   TF_BACKEND_KEY: bootstrap/terraform.tfstate
   TF_IN_AUTOMATION: "true"
   TF_INPUT: "false"
+  TF_VAR_account_alias: ${{ vars.TF_BOOTSTRAP_ACCOUNT_ALIAS }}
 
 concurrency:
   group: terraform-bootstrap
@@ -48,6 +49,10 @@ jobs:
           fi
           if [ -z "${{ vars.TF_BACKEND_LOCK_TABLE }}" ]; then
             echo "Missing variable TF_BACKEND_LOCK_TABLE."
+            exit 1
+          fi
+          if [ -z "${{ vars.TF_BOOTSTRAP_ACCOUNT_ALIAS }}" ]; then
+            echo "Missing variable TF_BOOTSTRAP_ACCOUNT_ALIAS."
             exit 1
           fi
 
