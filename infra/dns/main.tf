@@ -7,6 +7,6 @@ resource "aws_route53_record" "proxy_a" {
   zone_id = aws_route53_zone.proxy.zone_id
   name    = var.zone_name
   type    = "A"
-  ttl     = 60
+  ttl     = 50
   records = [var.proxy_eip]
 }
