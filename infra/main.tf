@@ -14,18 +14,18 @@ module "compute" {
   proxy_security_group_id   = module.network.proxy_security_group_id
   backend_security_group_id = module.network.backend_security_group_id
 
-  proxy_instance_type    = var.proxy_instance_type
-  backend_instance_type  = var.backend_instance_type
-  proxy_container_image  = var.proxy_container_image
+  proxy_instance_type     = var.proxy_instance_type
+  backend_instance_type   = var.backend_instance_type
+  proxy_container_image   = var.proxy_container_image
   backend_container_image = var.backend_container_image
 
-  proxy_container_cpu     = var.proxy_container_cpu
-  proxy_container_memory  = var.proxy_container_memory
-  backend_container_cpu   = var.backend_container_cpu
+  proxy_container_cpu      = var.proxy_container_cpu
+  proxy_container_memory   = var.proxy_container_memory
+  backend_container_cpu    = var.backend_container_cpu
   backend_container_memory = var.backend_container_memory
 
-  proxy_container_port  = var.proxy_container_port
-  proxy_bedrock_port    = var.proxy_bedrock_port
+  proxy_container_port   = var.proxy_container_port
+  proxy_bedrock_port     = var.proxy_bedrock_port
   backend_container_port = var.backend_container_port
 
   proxy_desired_count   = var.proxy_desired_count
